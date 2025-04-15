@@ -6,9 +6,9 @@ const height = Dimensions.get('window').height;
 
 // Retrieve initial screen's width
 let screenWidth = width;
-if(width>=852)
+if(width>512)
 {
-  screenWidth = 852;
+  screenWidth = 512;
 }
 
 
