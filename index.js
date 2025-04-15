@@ -1,12 +1,23 @@
 // packages
 import { Dimensions, PixelRatio } from 'react-native';
 
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
+
 // Retrieve initial screen's width
-let screenWidth = Dimensions.get('window').width;
+let screenWidth = width;
+if(width>=852)
+{
+  screenWidth = 852;
+}
+
 
 // Retrieve initial screen's height
-let screenHeight = Dimensions.get('window').height;
-
+let screenHeight = height;
+if(height>852)
+{
+  screenHeight = 852;
+}
 /**
  * Converts provided width percentage to independent pixel (dp).
  * @param  {string} widthPercent The percentage of screen's width that UI element should cover
