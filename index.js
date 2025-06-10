@@ -61,7 +61,7 @@ const heightPercentageToDP = heightPercent => {
  *                      invoke setState method and trigger screen rerender (this.setState()).
  */
 const listenOrientationChange = setOrientation => {
-  Dimensions.addEventListener('change', newDimensions => {
+ let subscription = Dimensions.addEventListener('change', newDimensions => {
     // Retrieve and save new dimensions
     screenWidth = newDimensions.window.width;
     screenHeight = newDimensions.window.height;
@@ -71,6 +71,8 @@ const listenOrientationChange = setOrientation => {
       orientation: screenWidth < screenHeight ? 'portrait' : 'landscape'
     });
   });
+
+  return subscription;
 };
 
 /**
@@ -78,14 +80,14 @@ const listenOrientationChange = setOrientation => {
  * componentWillUnmount lifecycle method of every class component (UI screen) that
  * listenOrientationChange function has been invoked. This should be done in order to
  * avoid adding new listeners every time the same component is re-mounted.
- */
+
 const removeOrientationListener = () => {
   Dimensions.removeEventListener('change', () => {});
-};
+}; */
 
 export {
   widthPercentageToDP,
   heightPercentageToDP,
   listenOrientationChange,
-  removeOrientationListener
+//  removeOrientationListener
 };
