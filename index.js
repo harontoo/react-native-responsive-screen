@@ -2,7 +2,7 @@
 import { Dimensions, PixelRatio } from 'react-native';
 //Screen constraints - Pixel 7 pro fold *folded*.
 const WIDTH = 444;
-const HEIGHT = 852;
+//const HEIGHT = 852;
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -17,10 +17,10 @@ if(width>WIDTH)
 
 // Retrieve initial screen's height
 let screenHeight = height;
-if(height>HEIGHT)
-{
-  screenHeight = HEIGHT;
-}
+// if(height>HEIGHT)
+// {
+//   screenHeight = HEIGHT;
+// }
 /**
  * Converts provided width percentage to independent pixel (dp).
  * @param  {string} widthPercent The percentage of screen's width that UI element should cover
