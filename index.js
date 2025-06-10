@@ -60,14 +60,14 @@ const heightPercentageToDP = heightPercent => {
  * @param {object} that Screen's class component this variable. The function needs it to
  *                      invoke setState method and trigger screen rerender (this.setState()).
  */
-const listenOrientationChange = that => {
+const listenOrientationChange = setOrientation => {
   Dimensions.addEventListener('change', newDimensions => {
     // Retrieve and save new dimensions
     screenWidth = newDimensions.window.width;
     screenHeight = newDimensions.window.height;
 
     // Trigger screen's rerender with a state update of the orientation variable
-    that.setState({
+    setOrientation({
       orientation: screenWidth < screenHeight ? 'portrait' : 'landscape'
     });
   });
