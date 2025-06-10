@@ -64,7 +64,7 @@ const listenOrientationChange = setOrientation => {
  let subscription = Dimensions.addEventListener('change', newDimensions => {
     // Retrieve and save new dimensions
     screenWidth = WIDTH;
-    screenHeight = newDimensions.window.height;
+   // screenHeight = newDimensions.window.height;
 
     // Trigger screen's rerender with a state update of the orientation variable
     setOrientation({
